@@ -475,7 +475,7 @@ let currentFilter = 'all';
 function getLastWatered(p) { return savedDates[p.num] || p.lastWatered; }
 function getStatus(p) {
   const u = daysUntilDue(parseDate(getLastWatered(p)), p.freqDays);
-  return u < 0 ? 'overdue' : u <= 2 ? 'due-soon' : 'ok-status';
+  return u < 0 ? 'overdue' : u <= 5 ? 'due-soon' : 'ok-status';
 }
 function getDaysLabel(p) {
   const u = daysUntilDue(parseDate(getLastWatered(p)), p.freqDays);
